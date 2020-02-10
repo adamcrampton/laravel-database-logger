@@ -9,7 +9,7 @@ Laravel logs to database table via custom Monolog channel + Eloquent model.
 
 ```'channels' => [
     'database' => [
-        'driver' => 'custom'
+        'driver' => 'custom',
         'via' => \AdamCrampton\LaravelDatabaseLogger\Services\LogMonoLog::class
     ]
 ]
