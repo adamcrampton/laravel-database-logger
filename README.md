@@ -15,3 +15,17 @@ Laravel logs to database table via custom Monolog channel + Eloquent model.
 ]
 ```
 * Add a setting to your .env file for the new channel name: ```LOG_CHANNEL=database```
+
+## Usage
+The package is pretty much a custom channel for Monolog, so you can use the existing facade and methods.
+
+These columns are automatically populated when adding to the log:
+* ```description``` The log message
+* ```origin``` The origin value from the request header
+* ```type``` Log type (```log```, ```store```, ```change```, or ```delete```)
+* ```result``` Log result (```success```, ```neutral```, or ```failure```)
+* ```level``` Log message level (```emergency```, ```alert```, ```critical```, ```error```, ```warning```, ```notice```, ```info```, or ```debug```)
+
+Additionally, you can pass in a ```category``` and ```sub_category``` value, which will be saved to those columns when generating a log entry. Example:
+
+```Log::info('test', ['category' => 'This is a category', 'sub_category' => 'This is a subcategory]);```
