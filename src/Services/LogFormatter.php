@@ -31,6 +31,7 @@ class LogFormatter extends NormalizerFormatter
     public function format(array $record)
     {
         $record = parent::format($record);
+        
         return $this->getDocument($record);
     }
     /**
