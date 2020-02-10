@@ -29,4 +29,14 @@ class Logs extends Migration
             $table->timestamps();
         });
     }
+
+    /**
+     * Roll back migration.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('logs');
+    }
 }
