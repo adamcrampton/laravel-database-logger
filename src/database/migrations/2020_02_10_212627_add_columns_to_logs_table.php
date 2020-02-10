@@ -14,7 +14,9 @@ class AddColumnsToLogsTable extends Migration
     public function up()
     {
         Schema::table('logs', function (Blueprint $table) {
-            //
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->ipAddress('ip_address')->nullable();
+            $table->string('user_agent')->nullable();
         });
     }
 
@@ -26,7 +28,9 @@ class AddColumnsToLogsTable extends Migration
     public function down()
     {
         Schema::table('logs', function (Blueprint $table) {
-            //
+            $table->dropColumn('user_id');
+            $table->dropColumn('ip_address');
+            $table->dropColumn('user_agent');
         });
     }
 }
