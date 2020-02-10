@@ -18,10 +18,7 @@
     "autoload": {
         "psr-4": {
             "AdamCrampton\\LaravelDatabaseLogger\\": "src/"
-        },
-        "files": [
-            "app/Helpers.php"
-        ]
+        }
     },
     "autoload-dev": {
         "psr-4": {
