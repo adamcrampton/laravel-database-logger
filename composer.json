@@ -1,5 +1,5 @@
 {
-    "name": "adamcrampton/LaravelDatabaseLogger",
+    "name": "adamcrampton/laravel-database-logger",
     "description": "Write Laravel logs to database table via Eloquent model",
     "keywords": [
         "laravel", "logs", "logging"
