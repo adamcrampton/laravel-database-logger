@@ -1,0 +1,31 @@
+{
+    "name": "adamcrampton/LaravelDatabaseLogger",
+    "description": "Write Laravel logs to database table via Eloquent model",
+    "keywords": [
+        "laravel", "logs", "logging"
+    ],
+    "type": "library",
+    "require": {
+        "laravel/framework": "5.8.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Crampton",
+            "email": "adam@adamcrampton.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "AdamCrampton\\LaravelDatabaseLogger\\": "src/"
+        },
+        "files": [
+            "app/Helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
