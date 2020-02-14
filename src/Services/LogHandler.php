@@ -18,9 +18,13 @@ class LogHandler extends AbstractProcessingHandler
 
     protected function write(array $record)
     {
-        $log = new Log();
-        $log->fill($record['formatted']);
-        $log->save();
+        try {
+            $log = new Log();
+            $log->fill($record['formatted']);
+            $log->save();
+        } catch (\Exception $e) {
+            $e->getMessage();
+        }
      }
 
     protected function getDefaultFormatter()
