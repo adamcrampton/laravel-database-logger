@@ -11,6 +11,6 @@ class LogViewerController extends Controller
      */
     public function index()
     {
-        return 'test';
+        return view('laravel-database-logger::log_viewer');
     }
 }
