@@ -14,8 +14,18 @@ Laravel logs to database table via custom Monolog channel + Eloquent model.
     ]
 ]
 ```
-* Add a setting to your .env file for the new channel name: ```LOG_CHANNEL=database```
+* Update the log stack array in ```config\logging.php``` to include the new channel:
 
+```
+'stack' => [
+    'driver' => 'stack',
+    'channels' => ['daily', 'database'],
+],
+'database' => [
+    'driver' => 'custom',
+    'via' => \AdamCrampton\LaravelDatabaseLogger\Services\LogMonoLog::class
+],
+```
 ## Usage
 The package is pretty much a custom channel for Monolog, so you can use the existing facade and methods.
 
