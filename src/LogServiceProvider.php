@@ -6,13 +6,16 @@ use Illuminate\Support\ServiceProvider;
 
 class LogServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
-    }
-
     public function boot()
     {
         //
+    }
+
+    public function register()
+    {
+        $this->commands([
+            \AdamCrampton\LaravelDatabaseLogger\Commands\PruneLogTable::class
+        ]);
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 }
