@@ -26,6 +26,16 @@ Laravel logs to database table via custom Monolog channel + Eloquent model.
     'via' => \AdamCrampton\LaravelDatabaseLogger\Services\LogMonoLog::class
 ],
 ```
+
+## Configuration
+A scheduled task is bundled with the package, which will delete rows in the ```logs``` table older than the expiration setting. To use this:
+* Run ```php artisan vendor:publish``` to publish the ```database_logger.php``` config file to your project
+* Run ```php artisan config:cache``` to ensure the project config is up to date
+* Set the expiration length (in days) in your project's ```config/database_logger.php``` file
+* Add an entry to the ```app/Console/Commands/Kernel.php``` file to schedule the cron job, something like: ```$schedule->command('logs:prune')->dailyAt('07:45');```
+
+To run the command manually: ```php artisan logs:prune```
+
 ## Usage
 The package is pretty much a custom channel for Monolog, so you can use the existing facade and methods.
 
