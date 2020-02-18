@@ -8,7 +8,9 @@ class LogServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__ . '/config/database_logger.php' => config_path('database_logger.php')
+        ]);
     }
 
     public function register()
