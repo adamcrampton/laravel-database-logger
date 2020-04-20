@@ -16,14 +16,14 @@ class LogHandler extends AbstractProcessingHandler
         parent::__construct($level);
     }
 
-    protected function write(array $record)
+    protected function write(array $record): void
     {
         $log = new Log();
         $log->fill($record['formatted']);
         $log->save();
      }
 
-    protected function getDefaultFormatter()
+    protected function getDefaultFormatter(): FormatterInterface
     {
         return new LogFormatter();
     }
