@@ -2,12 +2,11 @@
 
 namespace AdamCrampton\LaravelDatabaseLogger\Services;
 
-use Monolog\Logger;
-use Monolog\Handler\AbstractProcessingHandler;
-
 use AdamCrampton\LaravelDatabaseLogger\Models\Log;
 use AdamCrampton\LaravelDatabaseLogger\Services\LogFormatter;
-
+use Monolog\Formatter\FormatterInterface;
+use Monolog\Handler\AbstractProcessingHandler;
+use Monolog\Logger;
 
 class LogHandler extends AbstractProcessingHandler
 {
